@@ -12,20 +12,23 @@
   }
 {%- endstyle -%}
 
-<div class='section-{{ section.id }}-padding'>
+<div class="section-{{ section.id }}-padding">
   <div class="bg-white">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <p>test</p>
       <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
 
       <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-
         {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
           <div class="group relative">
             <div
-                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-9 xl:aspect-w-7">
-              <img src="{{ product.featured_media | image_url: width: 533 }}"
-                   alt="{{ product.featured_media.alt }}"
-                   class="h-full w-full object-cover object-center group-hover:opacity-75">
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-9 xl:aspect-w-7"
+            >
+              <img
+                src="{{ product.featured_media | image_url: width: 533 }}"
+                alt="{{ product.featured_media.alt }}"
+                class="h-full w-full object-cover object-center group-hover:opacity-75"
+              >
             </div>
             <div class="mt-4 flex justify-between">
               <div>
@@ -37,7 +40,9 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Black</p>
               </div>
-              <p class="text-sm font-medium text-gray-900">{{ product.selected_or_first_available_variant.price | money }}</p>
+              <p class="text-sm font-medium text-gray-900">
+                {{ product.selected_or_first_available_variant.price | money }}
+              </p>
             </div>
           </div>
         {%- endfor -%}
@@ -45,7 +50,6 @@
     </div>
   </div>
 </div>
-
 
 {% schema %}
 {
@@ -111,5 +115,4 @@
     }
   ]
 }
-
 {% endschema %}
