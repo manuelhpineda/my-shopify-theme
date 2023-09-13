@@ -43,9 +43,9 @@
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
 
-    {% comment %}{{ 'base.css' | asset_url | stylesheet_tag }}{% endcomment %}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
 
-    {{ 'app.css' | asset_url | stylesheet_tag }}
+    {% comment %}{{ 'app.css' | asset_url | stylesheet_tag }}{% endcomment %}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -101,6 +101,7 @@
 
     <script>
       
+      
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
@@ -139,6 +140,7 @@
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
+
 
     </script>
 
