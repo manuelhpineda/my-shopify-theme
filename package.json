@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite build --watch",
-    "shopify": "shopify theme dev --store=manuel-development",
+    "shopify": "shopify theme dev --store=manuel-development --port=9009",
     "build": "vite build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.2.2",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.6",
     "autoprefixer": "^10.4.15",
     "fast-glob": "^3.3.1",
     "postcss": "^8.4.28",
