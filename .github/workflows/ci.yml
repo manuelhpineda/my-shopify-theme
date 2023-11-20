@@ -5,9 +5,9 @@ jobs:
     name: Lighthouse
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v3
       - name: Lighthouse
-        uses: shopify/lighthouse-ci-action@v1.1.3
+        uses: shopify/lighthouse-ci-action@v1.1.1
         with:
           access_token: ${{ secrets.SHOP_ACCESS_TOKEN  }}
           store: ${{ secrets.SHOP_STORE  }}
